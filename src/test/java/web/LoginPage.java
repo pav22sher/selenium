@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * Страница авторизации.
+ */
 public class LoginPage {
 
     @FindBy(xpath = "//input[@name='j_username']")
@@ -20,12 +23,23 @@ public class LoginPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void enterLogin(String userName) {
-        userNameField.sendKeys(userName);
-        passwordField.sendKeys("Password123$");
+    public void loginProcess(String userName) {
+        loginProcess(userName, "Password123$");
     }
 
-    public void ClickLogin() {
+    public void loginProcess(String userName, String password) {
+        setUserNameField(userName);
+        setPasswordField(password);
         loginButton.click();
+    }
+
+    public void setUserNameField(String userName) {
+        userNameField.clear();
+        userNameField.sendKeys(userName);
+    }
+
+    public void setPasswordField(String password) {
+        passwordField.clear();
+        passwordField.sendKeys(password);
     }
 }

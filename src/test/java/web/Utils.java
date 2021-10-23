@@ -16,13 +16,12 @@ public class Utils {
      * @param fileName имя файла.
      */
     public static void makeScreenShot(String fileName) throws Exception {
-        Thread.sleep(3000);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Rectangle screenRectangle = new Rectangle(screenSize);
         Robot robot = new Robot();
         BufferedImage image = robot.createScreenCapture(screenRectangle);
         image.createGraphics();
-        ImageIO.write(image, "PNG", new File(".\\src\\main\\resources\\" + fileName + ".png"));
+        ImageIO.write(image, "PNG", new File(".\\src\\main\\resources\\screenshot\\" + fileName + ".png"));
     }
 
     /**
