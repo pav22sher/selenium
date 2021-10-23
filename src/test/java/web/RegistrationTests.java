@@ -25,8 +25,7 @@ public class RegistrationTests extends WebDriverSettings {
      */
     @Test
     public void testSuccessRegistrationRandomUser() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty12";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         makeScreenShot("1.testSuccessRegistrationRandomUser_Step1");
         mainPage.ClickRegistration();
@@ -73,8 +72,7 @@ public class RegistrationTests extends WebDriverSettings {
      */
     @Test
     public void testNecessaryPasswordField() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("");
         makeScreenShot("3.1.testNecessaryPasswordField_Step1");
@@ -89,8 +87,7 @@ public class RegistrationTests extends WebDriverSettings {
 
     @Test
     public void testRequirementPasswordField() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("pass");
         makeScreenShot("3.2.testRequirementPasswordField_Step1");
@@ -105,8 +102,7 @@ public class RegistrationTests extends WebDriverSettings {
 
     @Test
     public void testRequirementPasswordField2() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("password123");
         makeScreenShot("3.3.testRequirementPasswordField2_Step1");
@@ -121,8 +117,7 @@ public class RegistrationTests extends WebDriverSettings {
 
     @Test
     public void testRequirementPasswordField3() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("PASSWORD123");
         makeScreenShot("3.4.testRequirementPasswordField3_Step1");
@@ -137,8 +132,7 @@ public class RegistrationTests extends WebDriverSettings {
 
     @Test
     public void testRequirementPasswordField4() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("PASSWORd");
         makeScreenShot("3.5.testRequirementPasswordField4_Step1");
@@ -153,8 +147,7 @@ public class RegistrationTests extends WebDriverSettings {
 
     @Test
     public void testRequirementPasswordField5() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setPasswordField("PASSWORd1");
         makeScreenShot("3.6.testRequirementPasswordField5_Step1");
@@ -174,8 +167,7 @@ public class RegistrationTests extends WebDriverSettings {
      */
     @Test
     public void testNecessaryEmailField() throws Exception {
-        //TODO Login don't repeat <<< change Login
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setEmailField("");
         makeScreenShot("4.testNecessaryEmailField_Step1");
@@ -197,7 +189,7 @@ public class RegistrationTests extends WebDriverSettings {
      */
     @Test
     public void testExistEmail() throws Exception {
-        String newUserName = "Qwerty12345678";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         mainPage.setEmailField("User@mail.ru");
         makeScreenShot("5.testExistEmail_Step1");
@@ -217,7 +209,7 @@ public class RegistrationTests extends WebDriverSettings {
      */
     @Test
     public void testNotNecessaryRoleField() throws Exception {
-        String newUserName = "Qwerty1234567";
+        String newUserName = generateRandomUsername();
         mainPage.createFieldsOfUser(newUserName);
         Select selectRole = new Select(webDriver.findElement(By.id("registerForm:role")));
         selectRole.selectByVisibleText("Read / Write");
